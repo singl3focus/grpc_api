@@ -11,12 +11,12 @@ get-deps:
 
 
 generate:
-	make generate-auth-api
+	make generate-chat_server-api
 
 # for windows
-generate-auth-api:
-	if not exist "pkg\auth_v1" md "pkg\auth_v1"
-	protoc --proto_path api\auth_v1 \
-		--go_out=pkg\auth_v1 --go_opt=paths=source_relative \
-		--go-grpc_out=pkg\auth_v1 --go-grpc_opt=paths=source_relative \
-	api\auth_v1\auth.proto
+generate-chat_server-api:
+	if not exist "pkg\chat_server_v1" md "pkg\chat_server_v1"
+	protoc --proto_path api\chat_server_v1 \
+		--go_out=pkg\chat_server_v1 --go_opt=paths=source_relative \
+		--go-grpc_out=pkg\chat_server_v1 --go-grpc_opt=paths=source_relative \
+	api\chat_server_v1\chat_server.proto
